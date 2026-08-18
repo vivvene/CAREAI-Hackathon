@@ -1,458 +1,2762 @@
+/* =========================================
+   CAREAI — GLOBAL STYLES
+========================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f7faf9;
-  color: #17332f;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5faf9;
+  color: #173b3a;
+  min-height: 100vh;
+
+  /* Space for fixed navbar */
+  padding-top: 72px;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
 }
 
 button,
 input {
-  font: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 
-/* =========================
+/* =========================================
    NAVBAR
-========================= */
+   FIXED — DOES NOT MOVE WHEN SCROLLING
+========================================= */
 
 .navbar {
+  width: 100%;
   height: 72px;
-  padding: 0 8%;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #dcebea;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+
+  padding: 0 7%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 9999;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.nav-links {
+.navbar-logo {
   display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-
-/* =========================
-   GENERAL
-========================= */
-
-main {
-  min-height: calc(100vh - 72px);
-}
-
-.eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 14px;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-.primary-button,
-.secondary-button {
-  display: inline-block;
-  padding: 14px 22px;
-  border-radius: 10px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-}
-
-.primary-button {
-  background: #176b5b;
-  color: white;
-}
-
-.secondary-button {
-  background: white;
-  border: 1px solid #d5dedb;
-}
-
-
-/* =========================
-   HOME
-========================= */
-
-.home {
-  padding: 70px 8%;
-}
-
-.hero {
-  max-width: 1150px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 70px;
   align-items: center;
-}
+  gap: 9px;
 
-.hero h1 {
-  font-size: 58px;
-  line-height: 1.05;
-  margin-bottom: 25px;
-}
+  text-decoration: none;
 
-.hero h1 span {
-  display: block;
-}
-
-.hero-description {
-  max-width: 600px;
-  line-height: 1.7;
-  color: #61736f;
-  margin-bottom: 30px;
-}
-
-.hero-card {
-  background: white;
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-}
-
-.health-icon {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.hero-card h3 {
-  margin-bottom: 10px;
-}
-
-.hero-card p {
-  line-height: 1.6;
-  color: #61736f;
-}
-
-.features {
-  max-width: 1150px;
-  margin: 100px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.feature-card {
-  background: white;
-  padding: 28px;
-  border-radius: 16px;
-}
-
-.feature-card span {
-  font-size: 28px;
-}
-
-.feature-card h3 {
-  margin: 15px 0 10px;
-}
-
-.feature-card p {
-  color: #61736f;
-  line-height: 1.5;
-}
-
-
-/* =========================
-   ASSESSMENT
-========================= */
-
-.assessment-page,
-.results-page,
-.report-page {
-  padding: 60px 8%;
-  max-width: 1150px;
-  margin: auto;
-}
-
-.assessment-header,
-.results-header,
-.report-header {
-  margin-bottom: 40px;
-}
-
-.assessment-header h1,
-.results-header h1,
-.report-header h1 {
-  font-size: 42px;
-  margin-bottom: 12px;
-}
-
-.assessment-header p,
-.results-header p,
-.report-header p {
-  color: #61736f;
-}
-
-
-/* =========================
-   PATIENT INFORMATION
-========================= */
-
-.patient-section,
-.symptoms-section {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  margin-bottom: 25px;
-}
-
-.patient-section h2,
-.symptoms-section h2 {
-  margin-bottom: 25px;
-}
-
-.input-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.input-group label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.input-group input {
-  padding: 13px;
-  border: 1px solid #d5dedb;
-  border-radius: 9px;
-  outline: none;
-}
-
-
-/* =========================
-   SYMPTOMS
-========================= */
-
-.symptom-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.symptom {
-  padding: 15px;
-  border: 1px solid #d5dedb;
-  background: white;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.symptom.selected {
-  background: #e2f1ed;
-  border-color: #176b5b;
-}
-
-.symptom span {
-  margin-right: 8px;
-}
-
-.assessment-action {
-  margin-top: 25px;
-}
-
-
-/* =========================
-   RESULTS
-========================= */
-
-.result-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 0.7fr;
-  gap: 20px;
-}
-
-.result-main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.prediction-card,
-.ai-card,
-.risk-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-}
-
-.result-label {
-  font-size: 11px;
+  font-size: 25px;
   font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #61736f;
+  color: #164e4b;
 }
 
-.prediction-card h2 {
-  font-size: 35px;
-  margin: 12px 0;
-}
+.logo-icon {
+  width: 34px;
+  height: 34px;
 
-.prediction-card p,
-.ai-card p,
-.risk-card p {
-  color: #61736f;
-  line-height: 1.6;
-}
-
-.ai-title {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.risk-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.risk-circle {
-  margin: 25px 0;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff4d6;
-  font-weight: 700;
-}
 
-.result-actions {
-  margin-top: 30px;
-  display: flex;
-  gap: 15px;
-}
-
-
-/* =========================
-   REPORT
-========================= */
-
-.report-card {
-  background: white;
-  padding: 35px;
-  border-radius: 18px;
-}
-
-.report-section {
-  padding: 25px 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.report-section h2 {
-  margin-bottom: 20px;
-}
-
-.report-grid,
-.assessment-summary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.report-grid div,
-.assessment-summary div {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.report-grid span,
-.assessment-summary span {
-  font-size: 13px;
-  color: #61736f;
-}
-
-.symptom-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.symptom-tags span {
-  padding: 8px 14px;
-  background: #e2f1ed;
-  border-radius: 20px;
-  font-size: 13px;
-}
-
-.report-warning {
-  margin: 25px 0;
-  padding: 15px;
-  background: #fff7e5;
   border-radius: 10px;
+
+  background: #dff3ef;
+  color: #168f84;
+
+  font-size: 20px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #355c59;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #168f84;
+}
+
+.navbar-button {
+  text-decoration: none;
+
+  background: #168f84;
+  color: white;
+
+  padding: 11px 20px;
+
+  border-radius: 10px;
+
   font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.navbar-button:hover {
+  background: #11786f;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-page {
+  width: 100%;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 70px;
+
+  padding: 80px 9%;
+
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(95, 195, 182, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f5faf9 0%,
+      #e8f7f4 100%
+    );
+
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 650px;
+
+  text-align: left;
+}
+
+.hero-badge {
+  display: inline-block;
+
+  padding: 9px 16px;
+
+  background: #dff3ef;
+  color: #16776f;
+
+  border: 1px solid #c9e8e3;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5vw, 68px);
+
+  line-height: 1.08;
+
+  margin-bottom: 24px;
+
+  color: #123d3b;
+
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #159488;
+}
+
+.hero p {
+  max-width: 600px;
+
+  margin-bottom: 32px;
+
+  color: #58706e;
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   HERO BUTTON
+========================================= */
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 15px 24px;
+
+  background: #168f84;
+  color: white;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 8px 20px rgba(22, 143, 132, 0.22);
+
+  transition: all 0.2s ease;
+}
+
+.hero-button:hover {
+  background: #11786f;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 25px rgba(22, 143, 132, 0.28);
+}
+
+.hero-button span {
+  font-size: 19px;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+  flex: 0 0 380px;
+
+  height: 380px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Main health orb */
+
+.health-orb {
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #ffffff,
+      #cdeee9 55%,
+      #91d3ca
+    );
+
+  border: 12px solid rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 25px 60px rgba(22, 143, 132, 0.18),
+    inset 0 0 30px rgba(255, 255, 255, 0.8);
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.health-orb span {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 28px;
+
+  background: white;
+
+  color: #168f84;
+
+  font-size: 54px;
+
+  box-shadow: 0 10px 30px rgba(22, 143, 132, 0.14);
+}
+
+
+/* =========================================
+   FLOATING CARDS
+========================================= */
+
+.floating-card {
+  position: absolute;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #dcecea;
+
+  border-radius: 14px;
+
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #315956;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 12px 30px rgba(25, 80, 75, 0.12);
+
+  z-index: 3;
+}
+
+.floating-card span {
+  color: #168f84;
+  font-size: 17px;
+}
+
+.card-one {
+  top: 45px;
+  right: 0;
+}
+
+.card-two {
+  bottom: 50px;
+  left: 0;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features {
+  padding: 90px 7%;
+
+  background: white;
+}
+
+.section-intro {
+  max-width: 1100px;
+
+  margin: 0 auto 45px;
+}
+
+.eyebrow {
+  color: #168f84;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.section-intro h2 {
+  font-size: 40px;
+
+  line-height: 1.15;
+
+  color: #173f3d;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================
+   FEATURE GRID
+========================================= */
+
+.feature-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.feature-card {
+  background: #f7fbfa;
+
+  border: 1px solid #dfedeb;
+
+  border-radius: 20px;
+
+  padding: 34px;
+
+  min-height: 280px;
+
+  transition: all 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(24, 85, 80, 0.09);
+
+  border-color: #c4e2de;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 16px;
+
+  background: #dff3ef;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  font-size: 29px;
+}
+
+.feature-card h3 {
+  margin-bottom: 13px;
+
+  color: #194441;
+
+  font-size: 21px;
+
+  line-height: 1.25;
+}
+
+.feature-card p {
+  color: #6b807e;
+
+  line-height: 1.7;
+
+  font-size: 16px;
+}
+
+
+/* =========================================
+   HOME CTA
+========================================= */
+
+.home-cta {
+  max-width: 1100px;
+
+  margin: 70px auto;
+
+  padding: 50px 55px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e6f6f2,
+      #f3fbfa
+    );
+
+  border: 1px solid #d7ebe7;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.home-cta h2 {
+  font-size: 32px;
+
+  line-height: 1.2;
+
+  color: #173f3d;
+}
+
+.cta-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 14px 22px;
+
+  background: #168f84;
+  color: white;
+
+  border-radius: 11px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #11786f;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ASSESSMENT PAGE
+========================================= */
+
+.assessment-page {
+  min-height: calc(100vh - 72px);
+
+  padding: 70px 20px 100px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(22, 143, 132, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f5faf9 0%,
+      #eaf7f4 100%
+    );
+}
+
+
+/* =========================================
+   ASSESSMENT HEADER
+========================================= */
+
+.assessment-header {
+  max-width: 800px;
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+.assessment-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 16px;
+
+  margin-bottom: 18px;
+
+  background: #dff3ef;
+
+  border: 1px solid #cce9e4;
+
+  border-radius: 30px;
+
+  color: #168f84;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+.assessment-header h1 {
+  margin-bottom: 18px;
+
+  color: #123d3b;
+
+  font-size: clamp(38px, 5vw, 58px);
+
+  line-height: 1.08;
+
+  letter-spacing: -1.5px;
+}
+
+.assessment-header h1 span {
+  color: #168f84;
+}
+
+.assessment-header p {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #66817e;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   ASSESSMENT CONTAINER
+========================================= */
+
+.assessment-container {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: auto;
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.assessment-card {
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #dcecea;
+
+  border-radius: 26px;
+
+  padding: 42px;
+
+  box-shadow:
+    0 20px 60px rgba(25, 80, 75, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   FORM SECTIONS
+========================================= */
+
+.form-section {
+  margin-bottom: 10px;
+}
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+.section-number {
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #e1f4f0;
+
+  color: #168f84;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  margin-bottom: 5px;
+
+  color: #204d49;
+
+  font-size: 21px;
+}
+
+.section-heading p {
+  color: #78908d;
+
+  font-size: 14px;
+
   line-height: 1.5;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   FORM ROW
+========================================= */
 
-@media (max-width: 800px) {
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #315956;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-input {
+  width: 100%;
+
+  height: 52px;
+
+  padding: 0 16px;
+
+  border: 1px solid #cbdedb;
+
+  border-radius: 13px;
+
+  outline: none;
+
+  background: #fbfdfd;
+
+  color: #173b3a;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #9aacab;
+}
+
+.form-input:hover {
+  border-color: #9bc9c4;
+}
+
+.form-input:focus {
+  border-color: #168f84;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(22, 143, 132, 0.1);
+}
+
+select.form-input {
+  cursor: pointer;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.form-divider {
+  height: 1px;
+
+  margin: 34px 0;
+
+  background: #e5efed;
+}
+
+
+/* =========================================
+   SYMPTOM SECTION
+========================================= */
+
+.symptom-section {
+  margin-top: 5px;
+}
+
+.symptom-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================
+   SYMPTOM CARDS
+========================================= */
+
+.symptom-card {
+  min-height: 110px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 18px 12px;
+
+  border: 1px solid #d6e7e4;
+
+  border-radius: 16px;
+
+  background: #fbfdfd;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.symptom-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #72bdb5;
+
+  box-shadow:
+    0 8px 20px rgba(22, 143, 132, 0.08);
+}
+
+.symptom-card.selected {
+  transform: translateY(-2px);
+
+  background: #e3f6f2;
+
+  border: 2px solid #168f84;
+
+  box-shadow:
+    0 8px 22px rgba(22, 143, 132, 0.13);
+}
+
+.symptom-card h3 {
+  margin: 0;
+
+  color: #315b57;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.symptom-card.selected h3 {
+  color: #116f67;
+}
+
+.symptom-icon {
+  margin-bottom: 9px;
+
+  font-size: 28px;
+}
+
+
+/* =========================================
+   DURATION
+========================================= */
+
+.duration-group {
+  max-width: 500px;
+}
+
+.duration-input {
+  position: relative;
+}
+
+.duration-input .form-input {
+  padding-right: 65px;
+}
+
+.duration-input span {
+  position: absolute;
+
+  right: 17px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #7b9290;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ERRORS
+========================================= */
+
+.field-error {
+  margin-top: 7px;
+
+  color: #c54848;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+.symptom-error {
+  margin-top: 5px;
+}
+
+.error-box {
+  margin-top: 25px;
+
+  padding: 20px;
+
+  border: 1px solid #f0caca;
+
+  border-radius: 15px;
+
+  background: #fff4f4;
+
+  color: #a33c3c;
+
+  text-align: center;
+}
+
+.error-box strong {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 15px;
+}
+
+.error-box p {
+  margin-bottom: 15px;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   SUBMIT AREA
+========================================= */
+
+.assessment-submit {
+  margin-top: 35px;
+
+  padding-top: 5px;
+
+  text-align: center;
+}
+
+.assessment-submit .careai-button {
+  min-width: 240px;
+}
+
+
+/* =========================================
+   PRIVACY NOTE
+========================================= */
+
+.privacy-note {
+  margin-top: 13px;
+
+  color: #91a3a1;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-state {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  background: #f0faf8;
+
+  color: #315b57;
+
+  text-align: left;
+}
+
+.loading-state strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #168f84;
+}
+
+.loading-state p {
+  margin: 0;
+
+  color: #78908d;
+
+  font-size: 12px;
+}
+
+.loading-spinner {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  border: 3px solid #cce9e4;
+
+  border-top-color: #168f84;
+
+  border-radius: 50%;
+
+  animation: careai-spin 0.8s linear infinite;
+}
+
+@keyframes careai-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   RESULTS PAGE
+========================================= */
+
+.results-page {
+  min-height: calc(100vh - 72px);
+
+  padding: 70px 20px 100px;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(22, 143, 132, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f5faf9 0%,
+      #eaf7f4 100%
+    );
+}
+
+.results-container {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: auto;
+}
+
+
+/* =========================================
+   RESULTS HEADER
+========================================= */
+
+.results-header {
+  max-width: 800px;
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+.results-header .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 15px;
+}
+
+.results-header h1 {
+  margin-bottom: 14px;
+
+  color: #123d3b;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1.08;
+
+  letter-spacing: -1.5px;
+}
+
+.results-header > p:last-child {
+  color: #66817e;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+.results-header strong {
+  color: #315b57;
+}
+
+
+/* =========================================
+   RESULT CARDS
+========================================= */
+
+.result-card {
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #dcecea;
+
+  border-radius: 22px;
+
+  padding: 32px;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 12px 35px rgba(25, 80, 75, 0.065);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 40px rgba(25, 80, 75, 0.08);
+}
+
+
+/* =========================================
+   RESULT CARD HEADER
+========================================= */
+
+.result-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.card-label {
+  margin-bottom: 9px;
+
+  color: #829795;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.result-card h2 {
+  color: #168f84;
+
+  font-size: 32px;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================
+   RISK BADGE
+========================================= */
+
+.risk-badge {
+  min-width: 125px;
+
+  padding: 17px 18px;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.risk-badge.low,
+.risk-badge.unknown {
+  background: #e7f7ef;
+
+  color: #2e8060;
+}
+
+.risk-badge.moderate {
+  background: #fff5df;
+
+  color: #ad7a1b;
+}
+
+.risk-badge.high {
+  background: #fff0f0;
+
+  color: #bd4a4a;
+}
+
+
+/* =========================================
+   PROBABILITY
+========================================= */
+
+.probability {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e5efed;
+}
+
+.probability span {
+  color: #78908d;
+
+  font-size: 13px;
+}
+
+.probability strong {
+  color: #168f84;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   ALTERNATIVES
+========================================= */
+
+.alternatives-list {
+  overflow: hidden;
+
+  border: 1px solid #e3eeec;
+
+  border-radius: 14px;
+}
+
+.alternative-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 15px 17px;
+
+  background: #fbfdfd;
+
+  border-bottom: 1px solid #e6efed;
+
+  color: #496562;
+
+  font-size: 14px;
+}
+
+.alternative-item:last-child {
+  border-bottom: none;
+}
+
+.alternative-item strong {
+  color: #168f84;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESULT SYMPTOMS
+========================================= */
+
+.symptom-result-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.symptom-result-list span {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 10px 14px;
+
+  border-radius: 30px;
+
+  background: #eaf7f4;
+
+  border: 1px solid #d1ebe6;
+
+  color: #35625e;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.symptom-result-list span::first-letter {
+  color: #168f84;
+}
+
+.symptom-result-list p {
+  color: #899b99;
+
+  font-size: 14px;
+}
+
+.unknown-symptoms {
+  margin-top: 18px;
+
+  padding: 15px 17px;
+
+  border-radius: 13px;
+
+  background: #f7f9f8;
+
+  border: 1px solid #e4edeb;
+}
+
+.unknown-symptoms p {
+  margin-bottom: 5px;
+
+  color: #80918f;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.unknown-symptoms span {
+  color: #687c79;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESULT TEXT
+========================================= */
+
+.result-text {
+  margin: 0;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  background: #f6fbfa;
+
+  border: 1px solid #e1efed;
+
+  color: #5e7774;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   IMPORTANT FEATURES
+========================================= */
+
+.feature-result-list {
+  overflow: hidden;
+
+  border: 1px solid #e3eeec;
+
+  border-radius: 14px;
+}
+
+.feature-result-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 14px 17px;
+
+  background: #fbfdfd;
+
+  border-bottom: 1px solid #e6efed;
+}
+
+.feature-result-item:last-child {
+  border-bottom: none;
+}
+
+.feature-result-item span {
+  color: #496562;
+
+  font-size: 14px;
+
+  text-transform: capitalize;
+}
+
+.feature-result-item strong {
+  color: #168f84;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   GUIDANCE
+========================================= */
+
+.guidance-card {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f0faf8
+    );
+}
+
+.guidance-level {
+  display: inline-flex;
+
+  padding: 8px 14px;
+
+  margin-bottom: 16px;
+
+  border-radius: 30px;
+
+  background: #e2f5f1;
+
+  color: #168f84;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.guidance-list {
+  margin-top: 18px;
+
+  padding: 0;
+
+  list-style: none;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.guidance-list li {
+  position: relative;
+
+  padding: 13px 15px 13px 40px;
+
+  border-radius: 12px;
+
+  background: #f8fbfa;
+
+  color: #496562;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.guidance-list li::before {
+  content: "✓";
+
+  position: absolute;
+
+  left: 14px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 22px;
+
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dff3ef;
+
+  color: #168f84;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================
+   RESULTS DISCLAIMER
+========================================= */
+
+.results-disclaimer {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin: 25px 0;
+
+  padding: 19px;
+
+  border: 1px solid #dcecea;
+
+  border-radius: 16px;
+
+  background: #f1f6f5;
+}
+
+.results-disclaimer strong {
+  display: block;
+
+  color: #47625f;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.results-disclaimer p {
+  color: #718582;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   RESULTS BUTTONS
+========================================= */
+
+.results-actions {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 30px;
+
+  padding-bottom: 10px;
+}
+
+.results-actions .careai-button {
+  min-width: 190px;
+}
+
+
+/* =========================================
+   REPORT PAGE
+========================================= */
+
+.report-page {
+  min-height: calc(100vh - 72px);
+
+  padding: 65px 20px 90px;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(22, 143, 132, 0.08),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #f5faf9 0%,
+      #eaf7f4 100%
+    );
+}
+
+.report-container {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: auto;
+}
+
+
+/* =========================================
+   REPORT HEADER
+========================================= */
+
+.report-header {
+  max-width: 900px;
+
+  margin: 0 auto 45px;
+
+  text-align: left;
+}
+
+.report-header-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.report-tag {
+  display: inline-flex;
+
+  padding: 7px 14px;
+
+  border-radius: 30px;
+
+  background: #dff3ef;
+
+  border: 1px solid #cce9e4;
+
+  color: #168f84;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.report-label {
+  margin-top: 9px;
+
+  color: #829795;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.report-status {
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  background: #e8f7ef;
+
+  color: #2d8561;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.report-header h1 {
+  margin-bottom: 15px;
+
+  color: #123d3b;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1.05;
+
+  letter-spacing: -1.5px;
+}
+
+.report-header h1 span {
+  color: #168f84;
+}
+
+.report-header > p {
+  color: #66817e;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   REPORT SECTIONS
+========================================= */
+
+.report-section {
+  margin-bottom: 22px;
+
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #dcecea;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 30px rgba(25, 80, 75, 0.055);
+}
+
+.report-section-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+}
+
+.report-section-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #e2f5f1;
+
+  font-size: 18px;
+}
+
+.report-section-heading h2 {
+  margin-bottom: 5px;
+
+  color: #204d49;
+
+  font-size: 20px;
+}
+
+.report-section-heading p {
+  color: #809491;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   REPORT PATIENT INFORMATION
+========================================= */
+
+.report-info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.report-info-item {
+  padding: 17px;
+
+  border-radius: 13px;
+
+  background: #f7fbfa;
+
+  border: 1px solid #e4efed;
+}
+
+.report-info-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #8a9e9b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.report-info-item strong {
+  color: #315b57;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   REPORT RESULT
+========================================= */
+
+.result-highlight {
+  border-color: #cce9e4;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f0faf8
+    );
+}
+
+.main-result {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.condition-result > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #829795;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.condition-result h3 {
+  margin-bottom: 8px;
+
+  color: #168f84;
+
+  font-size: 32px;
+
+  line-height: 1.1;
+}
+
+.condition-result p {
+  color: #78908d;
+
+  font-size: 13px;
+}
+
+.condition-result p strong {
+  color: #315b57;
+}
+
+
+/* =========================================
+   REPORT RISK
+========================================= */
+
+.risk-badge {
+  min-width: 125px;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  text-align: center;
+}
+
+.risk-badge span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.risk-badge strong {
+  font-size: 18px;
+}
+
+.risk-low {
+  background: #e7f7ef;
+
+  color: #2e8060;
+}
+
+.risk-moderate {
+  background: #fff5df;
+
+  color: #ad7a1b;
+}
+
+.risk-high {
+  background: #fff0f0;
+
+  color: #bd4a4a;
+}
+
+
+/* =========================================
+   REPORT SYMPTOMS
+========================================= */
+
+.report-symptoms {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.report-symptom-pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  border-radius: 30px;
+
+  background: #eaf7f4;
+
+  border: 1px solid #d1ebe6;
+
+  color: #35625e;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.report-symptom-pill span {
+  color: #168f84;
+
+  font-weight: 800;
+}
+
+.report-muted {
+  color: #899b99;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   REPORT ALTERNATIVES
+========================================= */
+
+.report-alternatives {
+  overflow: hidden;
+
+  border: 1px solid #e3eeec;
+
+  border-radius: 14px;
+}
+
+.alternative-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 15px 17px;
+
+  background: #fbfdfd;
+
+  border-bottom: 1px solid #e6efed;
+
+  color: #496562;
+
+  font-size: 14px;
+}
+
+.alternative-row:last-child {
+  border-bottom: none;
+}
+
+.alternative-row strong {
+  color: #168f84;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   REPORT EXPLANATION
+========================================= */
+
+.report-text-box {
+  padding: 20px;
+
+  border-radius: 15px;
+
+  background: #f6fbfa;
+
+  border: 1px solid #e1efed;
+}
+
+.report-text {
+  margin: 0;
+
+  color: #5e7774;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   REPORT GUIDANCE
+========================================= */
+
+.guidance-message {
+  margin-bottom: 16px;
+
+  padding: 17px 19px;
+
+  border-radius: 14px;
+
+  background: #edf9f6;
+
+  border-left: 4px solid #168f84;
+}
+
+.guidance-message p {
+  color: #416561;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.report-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.report-action {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  background: #f8fbfa;
+
+  color: #496562;
+
+  font-size: 13px;
+}
+
+.action-check {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #dff3ef;
+
+  color: #168f84;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================
+   REPORT WARNING
+========================================= */
+
+.report-warning {
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+
+  padding: 22px;
+
+  border: 1px solid #f0d3a5;
+
+  border-radius: 18px;
+
+  background: #fff8eb;
+}
+
+.warning-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #ffedc9;
+
+  color: #b77a18;
+
+  font-weight: 800;
+}
+
+.report-warning h3 {
+  margin-bottom: 6px;
+
+  color: #8d641f;
+
+  font-size: 16px;
+}
+
+.report-warning p {
+  margin-bottom: 10px;
+
+  color: #8a7552;
+
+  font-size: 13px;
+}
+
+.report-warning ul {
+  margin: 0;
+
+  padding-left: 18px;
+
+  color: #806f50;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   REPORT DISCLAIMER
+========================================= */
+
+.report-disclaimer {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  margin-bottom: 28px;
+
+  padding: 19px;
+
+  border: 1px solid #dcecea;
+
+  border-radius: 16px;
+
+  background: #f1f6f5;
+}
+
+.disclaimer-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #d5e5e2;
+
+  color: #54706c;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.report-disclaimer strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #47625f;
+
+  font-size: 12px;
+}
+
+.report-disclaimer p {
+  color: #718582;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   REPORT BUTTONS
+========================================= */
+
+.report-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 30px;
+}
+
+.report-buttons .careai-button {
+  min-width: 180px;
+}
+
+
+/* =========================================
+   REPORT FOOTER
+========================================= */
+
+.report-footer {
+  margin-top: 25px;
+
+  color: #9aaba8;
+
+  font-size: 11px;
+
+  text-align: center;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================
+   EMPTY REPORT
+========================================= */
+
+.report-empty {
+  max-width: 600px;
+
+  margin: 80px auto;
+
+  padding: 50px 40px;
+
+  background: white;
+
+  border: 1px solid #dcecea;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 15px 45px rgba(25, 80, 75, 0.07);
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 20px;
+
+  border-radius: 20px;
+
+  background: #e2f5f1;
+
+  color: #168f84;
+
+  font-size: 28px;
+}
+
+.report-empty .report-tag {
+  margin-bottom: 15px;
+}
+
+.report-empty h1 {
+  margin-bottom: 12px;
+
+  color: #173f3d;
+
+  font-size: 30px;
+}
+
+.report-empty > p {
+  max-width: 430px;
+
+  margin: 0 auto 25px;
+
+  color: #718582;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CAREAI BUTTON
+========================================= */
+
+.careai-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 50px;
+
+  padding: 0 25px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: #168f84;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.careai-button:hover {
+  background: #11786f;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(22, 143, 132, 0.2);
+}
+
+.careai-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   RESPONSIVE — 900px
+========================================= */
+
+@media (max-width: 900px) {
 
   .hero {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 70px 6%;
+  }
+
+  .hero-content {
+    max-width: 750px;
+  }
+
+  .hero p {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .hero-visual {
+    flex-basis: 320px;
+
+    width: 100%;
+  }
+
+  .feature-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
+  .home-cta {
+    margin-left: 5%;
+
+    margin-right: 5%;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE — 750px
+========================================= */
+
+@media (max-width: 750px) {
+
+  .report-page {
+    padding: 50px 15px 70px;
+  }
+
+  .report-header-top {
+    align-items: flex-start;
+
+    gap: 15px;
+
+    flex-direction: column;
+  }
+
+  .report-header h1 {
     font-size: 42px;
   }
 
-  .features {
-    grid-template-columns: 1fr;
+  .report-section {
+    padding: 25px 20px;
+
+    border-radius: 19px;
   }
 
-  .input-grid {
+  .report-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-result {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .risk-badge {
+    width: 100%;
+  }
+
+  .report-buttons {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .report-buttons .careai-button {
+    width: 100%;
+  }
+
+  .results-actions {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .results-actions .careai-button {
+    width: 100%;
+  }
+
+  .result-card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .result-card-header .risk-badge {
+    width: auto;
+
+    min-width: 120px;
+  }
+
+  .form-row {
     grid-template-columns: 1fr;
+
+    gap: 0;
   }
 
   .symptom-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .result-grid {
+  .assessment-card {
+    padding: 28px 20px;
+
+    border-radius: 20px;
+  }
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-visual {
+    transform: scale(0.85);
+  }
+
+  .home-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 35px;
+  }
+
+  .home-cta h2 {
+    font-size: 27px;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE — 700px
+========================================= */
+
+@media (max-width: 700px) {
+
+  .assessment-page {
+    padding: 50px 15px 70px;
+  }
+
+  .assessment-header h1 {
+    font-size: 40px;
+  }
+
+  .assessment-card {
+    padding: 28px 20px;
+
+    border-radius: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .symptom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE — 450px
+========================================= */
+
+@media (max-width: 450px) {
+
+  .navbar-logo {
+    font-size: 21px;
+  }
+
+  .logo-icon {
+    width: 31px;
+    height: 31px;
+
+    font-size: 18px;
+  }
+
+  .assessment-header h1 {
+    font-size: 34px;
+  }
+
+  .assessment-header p {
+    font-size: 15px;
+  }
+
+  .assessment-card {
+    padding: 24px 16px;
+  }
+
+  .symptom-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .symptom-card {
+    min-height: 95px;
+  }
+
+  .results-page {
+    padding: 50px 15px 70px;
+  }
+
+  .results-header h1 {
+    font-size: 36px;
+  }
+
+  .result-card {
+    padding: 24px 20px;
+
+    border-radius: 19px;
+  }
+
+  .result-card h2 {
+    font-size: 27px;
+  }
+
+  .probability strong {
+    font-size: 18px;
+  }
+
+  .report-header h1 {
+    font-size: 35px;
+  }
+
+  .report-info-grid {
     grid-template-columns: 1fr;
   }
 
-  .report-grid,
-  .assessment-summary {
-    grid-template-columns: 1fr;
+  .condition-result h3 {
+    font-size: 27px;
   }
 
+  .hero {
+    padding-left: 20px;
+
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-visual {
+    transform: scale(0.7);
+
+    margin: -30px 0;
+  }
+
+  .results-disclaimer {
+    flex-direction: column;
+
+    gap: 8px;
+  }
 }

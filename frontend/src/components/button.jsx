@@ -1,10 +1,11 @@
-function Button({ children, onClick, type = "button", disabled = false }) {
+import React from "react";
+
+function Button({ children, onClick, type = "button" }) {
   return (
     <button
+      className="careai-button"
       type={type}
       onClick={onClick}
-      disabled={disabled}
-      className="custom-button"
     >
       {children}
     </button>

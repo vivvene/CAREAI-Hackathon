@@ -1,10 +1,14 @@
+import React from "react";
+
 function RiskBadge({ risk }) {
-  const riskLevel = risk?.toLowerCase();
+  const riskClass = risk
+    ? risk.toLowerCase()
+    : "unknown";
 
   return (
-    <div className={`risk-badge ${riskLevel || "unknown"}`}>
-      {risk || "Unknown Risk"}
-    </div>
+    <span className={`risk-badge ${riskClass}`}>
+      {risk || "Unknown"} Risk
+    </span>
   );
 }
 
