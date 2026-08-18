@@ -1,0 +1,21 @@
+CAREAI ML - RUN THIS FIRST
+
+1. Open this folder in VS Code.
+2. Open Terminal in this folder.
+3. Create environment:
+   py -m venv .venv
+4. Activate:
+   .venv\Scripts\activate
+5. Install:
+   pip install -r requirements.txt
+6. Train:
+   python scripts/train.py
+7. Evaluate:
+   python scripts/evaluate.py
+8. Start API:
+   uvicorn api.main:app --reload
+9. Open:
+   http://127.0.0.1:8000/docs
+
+Your team integrates POST /predict.
+This is a hackathon prototype, not a clinical diagnostic system.

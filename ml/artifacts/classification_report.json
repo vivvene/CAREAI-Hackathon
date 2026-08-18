@@ -1,0 +1,135 @@
+{
+  "Acid Reflux": {
+    "precision": 0.9836065573770492,
+    "recall": 1.0,
+    "f1-score": 0.9917355371900827,
+    "support": 60.0
+  },
+  "Allergic Rhinitis": {
+    "precision": 0.9508196721311475,
+    "recall": 0.9666666666666667,
+    "f1-score": 0.9586776859504132,
+    "support": 60.0
+  },
+  "Anemia-like Fatigue Pattern": {
+    "precision": 0.9655172413793104,
+    "recall": 0.9333333333333333,
+    "f1-score": 0.9491525423728814,
+    "support": 60.0
+  },
+  "Asthma-like Respiratory Pattern": {
+    "precision": 0.8787878787878788,
+    "recall": 0.9666666666666667,
+    "f1-score": 0.9206349206349206,
+    "support": 60.0
+  },
+  "Bronchitis": {
+    "precision": 0.9272727272727272,
+    "recall": 0.85,
+    "f1-score": 0.8869565217391304,
+    "support": 60.0
+  },
+  "Common Cold": {
+    "precision": 0.9047619047619048,
+    "recall": 0.95,
+    "f1-score": 0.926829268292683,
+    "support": 60.0
+  },
+  "Conjunctivitis": {
+    "precision": 0.9836065573770492,
+    "recall": 1.0,
+    "f1-score": 0.9917355371900827,
+    "support": 60.0
+  },
+  "Dehydration": {
+    "precision": 0.9365079365079365,
+    "recall": 0.9833333333333333,
+    "f1-score": 0.959349593495935,
+    "support": 60.0
+  },
+  "Dengue-like Febrile Illness": {
+    "precision": 0.95,
+    "recall": 0.95,
+    "f1-score": 0.95,
+    "support": 60.0
+  },
+  "Dermatitis-like Skin Irritation": {
+    "precision": 0.967741935483871,
+    "recall": 1.0,
+    "f1-score": 0.9836065573770492,
+    "support": 60.0
+  },
+  "Food Poisoning": {
+    "precision": 0.7761194029850746,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.8188976377952756,
+    "support": 60.0
+  },
+  "Gastroenteritis": {
+    "precision": 0.8823529411764706,
+    "recall": 0.75,
+    "f1-score": 0.8108108108108109,
+    "support": 60.0
+  },
+  "Influenza": {
+    "precision": 0.9821428571428571,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.9482758620689655,
+    "support": 60.0
+  },
+  "Migraine": {
+    "precision": 0.9666666666666667,
+    "recall": 0.9666666666666667,
+    "f1-score": 0.9666666666666667,
+    "support": 60.0
+  },
+  "Otitis Media": {
+    "precision": 0.9491525423728814,
+    "recall": 0.9333333333333333,
+    "f1-score": 0.9411764705882353,
+    "support": 60.0
+  },
+  "Pneumonia": {
+    "precision": 0.9508196721311475,
+    "recall": 0.9666666666666667,
+    "f1-score": 0.9586776859504132,
+    "support": 60.0
+  },
+  "Sinusitis": {
+    "precision": 0.9821428571428571,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.9482758620689655,
+    "support": 60.0
+  },
+  "Tension Headache": {
+    "precision": 0.95,
+    "recall": 0.95,
+    "f1-score": 0.95,
+    "support": 60.0
+  },
+  "Urinary Tract Infection": {
+    "precision": 0.9354838709677419,
+    "recall": 0.9666666666666667,
+    "f1-score": 0.9508196721311475,
+    "support": 60.0
+  },
+  "Viral Fever": {
+    "precision": 0.9482758620689655,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.9322033898305084,
+    "support": 60.0
+  },
+  "accuracy": 0.9375,
+  "macro avg": {
+    "precision": 0.9385889541866768,
+    "recall": 0.9375,
+    "f1-score": 0.9372241111077084,
+    "support": 1200.0
+  },
+  "weighted avg": {
+    "precision": 0.9385889541866768,
+    "recall": 0.9375,
+    "f1-score": 0.9372241111077083,
+    "support": 1200.0
+  }
+}

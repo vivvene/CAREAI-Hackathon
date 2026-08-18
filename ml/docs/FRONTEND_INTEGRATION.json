@@ -1,0 +1,15 @@
+{
+  "method": "POST",
+  "path": "/predict",
+  "request": {
+    "symptoms": [
+      "fever",
+      "headache",
+      "fatigue",
+      "body ache"
+    ],
+    "top_k": 3
+  },
+  "local_url": "http://127.0.0.1:8000",
+  "note": "For final deployment, replace localhost with the deployed ML service URL."
+}

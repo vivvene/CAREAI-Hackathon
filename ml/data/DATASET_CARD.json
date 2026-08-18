@@ -1,0 +1,11 @@
+{
+  "name": "CareAI Demo Symptom Dataset",
+  "type": "synthetic_demo",
+  "rows": 6000,
+  "conditions": 20,
+  "symptoms": 43,
+  "generation_seed": 2026,
+  "purpose": "Software/hackathon demonstration only; not medically validated.",
+  "important_note": "Do not represent this synthetic dataset as clinical evidence or a validated medical dataset.",
+  "recommended_replacement": "For a research-grade experiment, use a properly licensed, medically documented dataset such as DDXPlus and report its provenance and limitations."
+}
