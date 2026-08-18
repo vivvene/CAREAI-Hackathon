@@ -4,12 +4,16 @@ const { getGuidance } = require("../services/guidanceService");
 
 const predictPatient = async (req, res) => {
     try {
-        const { age, gender, symptoms } = req.body;
-
+const { name, age, gender, symptoms } = req.body;
         // -----------------------------
         // VALIDATION
         // -----------------------------
-
+        if (!name || typeof name !== "string" || !name.trim()) {
+    return res.status(400).json({
+        success: false,
+        message: "Patient name is required"
+    });
+}
         if (age === undefined || age === null) {
             return res.status(400).json({
                 success: false,
@@ -17,7 +21,14 @@ const predictPatient = async (req, res) => {
             });
         }
 
-        if (!gender) {
+        if (typeof age !== "number" || age < 0 || age > 120) {
+            return res.status(400).json({
+                success: false,
+                message: "Age must be a valid number between 0 and 120"
+            });
+        }
+
+        if (!gender || typeof gender !== "string") {
             return res.status(400).json({
                 success: false,
                 message: "Gender is required"
@@ -31,6 +42,13 @@ const predictPatient = async (req, res) => {
             });
         }
 
+        if (!symptoms.every((symptom) => typeof symptom === "string")) {
+            return res.status(400).json({
+                success: false,
+                message: "Symptoms must be provided as text values"
+            });
+        }
+
         // -----------------------------
         // ML PREDICTION
         // -----------------------------
@@ -40,7 +58,7 @@ const predictPatient = async (req, res) => {
         const prediction = mlResult.top_prediction;
 
         // -----------------------------
-        // SAFETY / RED-FLAG GUIDANCE
+        // SAFETY / RED FLAGS
         // -----------------------------
 
         const guidance = getGuidance(symptoms);
@@ -49,9 +67,13 @@ const predictPatient = async (req, res) => {
         // SAVE TO MONGODB
         // -----------------------------
 
-        const patient = await Patient.create({
+            const patient = await Patient.create({
+            name: name.trim(),
+
             age,
-            gender,
+
+            gender: gender.trim(),
+
             symptoms,
 
             prediction: prediction?.condition || "Unknown",
@@ -60,13 +82,29 @@ const predictPatient = async (req, res) => {
 
             riskLevel: guidance.riskLevel,
 
+            redFlags: guidance.redFlags || [],
+
             explanation: mlResult.explanation || "",
 
             alternatives: mlResult.alternatives || [],
 
-            redFlags: guidance.redFlags || [],
+            guidance: {
+                message: guidance.message,
+                actions: guidance.actions || []
+            },
 
-            guidance: guidance.actions || []
+            recognizedSymptoms:
+                mlResult.recognized_symptoms || [],
+
+            unknownSymptoms:
+                mlResult.unknown_symptoms || [],
+
+            importantFeatures:
+                mlResult.important_selected_features || [],
+
+            disclaimer:
+                mlResult.disclaimer ||
+                "Prototype only. Not a medical diagnosis or emergency triage system."
         });
 
         // -----------------------------
@@ -77,25 +115,38 @@ const predictPatient = async (req, res) => {
             success: true,
 
             patientId: patient._id,
+            patient: {
+                id: patient._id,
+                name: patient.name,
+                age: patient.age,
+                gender: patient.gender
+            },
 
-            prediction: mlResult.top_prediction,
+            prediction:
+                mlResult.top_prediction || null,
 
-            alternatives: mlResult.alternatives || [],
+            alternatives:
+                mlResult.alternatives || [],
 
-            recognizedSymptoms: mlResult.recognized_symptoms || [],
+            recognizedSymptoms:
+                mlResult.recognized_symptoms || [],
 
-            unknownSymptoms: mlResult.unknown_symptoms || [],
+            unknownSymptoms:
+                mlResult.unknown_symptoms || [],
 
-            riskLevel: guidance.riskLevel,
+            riskLevel:
+                guidance.riskLevel,
 
-            redFlags: guidance.redFlags || [],
+            redFlags:
+                guidance.redFlags || [],
 
             guidance: {
                 message: guidance.message,
                 actions: guidance.actions || []
             },
 
-            explanation: mlResult.explanation || "",
+            explanation:
+                mlResult.explanation || "",
 
             importantFeatures:
                 mlResult.important_selected_features || [],
@@ -106,11 +157,26 @@ const predictPatient = async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Prediction controller error:", error);
+        console.error(
+            "Prediction controller error:",
+            error
+        );
+
+        // ML service unavailable
+        if (
+            error.message ===
+            "ML prediction service unavailable"
+        ) {
+            return res.status(503).json({
+                success: false,
+                message:
+                    "Prediction service is currently unavailable"
+            });
+        }
 
         return res.status(500).json({
             success: false,
-            message: error.message
+            message: "Unable to process prediction"
         });
     }
 };

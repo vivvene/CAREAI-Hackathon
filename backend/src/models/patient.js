@@ -2,6 +2,12 @@ const mongoose = require("mongoose");
 
 const patientSchema = new mongoose.Schema(
     {
+        name: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
         age: {
             type: Number,
             required: true
@@ -9,7 +15,8 @@ const patientSchema = new mongoose.Schema(
 
         gender: {
             type: String,
-            required: true
+            required: true,
+            trim: true
         },
 
         symptoms: {
@@ -50,6 +57,26 @@ const patientSchema = new mongoose.Schema(
         guidance: {
             type: Object,
             default: null
+        },
+
+        importantFeatures: {
+            type: Array,
+            default: []
+        },
+
+        recognizedSymptoms: {
+            type: [String],
+            default: []
+        },
+
+        unknownSymptoms: {
+            type: [String],
+            default: []
+        },
+
+        disclaimer: {
+            type: String,
+            default: "Prototype only. Not a medical diagnosis or emergency triage system."
         }
     },
     {

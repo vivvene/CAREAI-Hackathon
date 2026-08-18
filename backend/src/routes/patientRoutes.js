@@ -1,9 +1,16 @@
 const express = require("express");
 
+const {
+    getPatients,
+    getPatientById
+} = require("../controllers/patientController");
+
 const router = express.Router();
 
-const { getPatients } = require("../controllers/patientController");
-
+// Get all patient/analysis history
 router.get("/", getPatients);
+
+// Get one patient's complete report
+router.get("/:id", getPatientById);
 
 module.exports = router;
