@@ -2760,3 +2760,366 @@ select.form-input {
     gap: 8px;
   }
 }
+/* ================================
+   RESULT SYMPTOM SPACING
+================================ */
+
+.result-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.result-symptom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.symptom-check {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+/* =================================
+   CAREAI RESULT SYMPTOMS
+================================= */
+
+.result-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: 20px;
+}
+
+.result-symptom {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.symptom-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* Final spacing fix for recognized symptoms */
+.results-page .result-symptoms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 20px;
+}
+
+.results-page .result-symptom {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-right: 4px;
+  white-space: nowrap;
+}
+/* Important Features spacing */
+.result-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.result-feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.result-feature span {
+  font-weight: 500;
+}
+
+.result-feature strong {
+  font-weight: 700;
+}
+/* ===== Main Result Card ===== */
+
+.result-main-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:28px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#0f766e,#115e59);
+  color:#fff;
+}
+
+.result-label{
+  font-size:.78rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:.8;
+  margin-bottom:10px;
+}
+
+.result-main-card h2{
+  font-size:2.2rem;
+  font-weight:700;
+  margin:0 0 12px;
+  color:#ffffff;
+}
+
+.result-confidence{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:.95rem;
+}
+
+.result-confidence strong{
+  font-size:1.15rem;
+}
+
+/* ===== Risk Badge ===== */
+
+.result-risk{
+  background:rgba(255,255,255,.14);
+  backdrop-filter:blur(8px);
+  padding:16px 22px;
+  border-radius:18px;
+  text-align:center;
+  min-width:120px;
+}
+
+.result-risk span{
+  display:block;
+  font-size:.72rem;
+  letter-spacing:1px;
+  opacity:.8;
+}
+
+.result-risk strong{
+  display:block;
+  font-size:1.35rem;
+  margin:6px 0;
+}
+
+.result-risk small{
+  opacity:.75;
+}
+
+/* ===== Other Possibilities ===== */
+
+.result-alternatives{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:18px;
+}
+
+.result-alternative{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 16px;
+  border-radius:14px;
+  background:#f8fafc;
+}
+
+.result-alternative span{
+  font-weight:600;
+}
+
+.result-alternative strong{
+  color:#0f766e;
+  font-size:1rem;
+}
+
+/* ===== Important Features ===== */
+
+.result-features{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:18px;
+}
+
+.result-feature{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+  border-radius:14px;
+  background:#f8fafc;
+}
+
+.result-feature span{
+  font-weight:600;
+}
+
+.result-feature strong{
+  color:#faffff;
+  font-size:.95rem;
+}
+/* ===== Recognized Symptoms ===== */
+
+.result-symptoms{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+
+.result-symptom{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  background:#f0fdfa;
+  border:1px solid #ccfbf1;
+  border-radius:999px;
+  font-weight:600;
+  color:#0f766e;
+}
+
+.symptom-check{
+  color:#16a34a;
+  font-weight:700;
+}
+
+/* ===== Unknown Symptoms ===== */
+
+.result-unknown{
+  margin-top:18px;
+  padding:16px;
+  border-radius:14px;
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+}
+
+.result-unknown strong{
+  display:block;
+  margin-bottom:8px;
+  color:#9a3412;
+}
+
+/* ===== Model Explanation ===== */
+
+.result-explanation{
+  margin-top:16px;
+  padding:18px;
+  border-radius:16px;
+  background:#f8fafc;
+  border-left:5px solid #0f766e;
+}
+
+.result-explanation p{
+  margin:0;
+  line-height:1.8;
+  color:#334155;
+}
+
+/* ===== Section Headings ===== */
+
+.result-section-title{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:16px;
+}
+
+.result-section-icon{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:#ccfbf1;
+  font-size:20px;
+}
+
+.result-section-title h2{
+  margin:0 0 4px;
+  font-size:1.2rem;
+  font-weight:700;
+}
+
+.result-section-title p{
+  margin:0;
+  color:#64748b;
+  font-size:.92rem;
+}
+/* ===== Safety Guidance ===== */
+
+.result-guidance-card{
+  background:#ffffff;
+  border-radius:20px;
+  padding:24px;
+  border:1px solid #e5e7eb;
+  box-shadow:0 8px 24px rgba(15,118,110,.08);
+}
+
+.result-guidance-level{
+  display:inline-block;
+  margin:8px 0 16px;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.result-risk-low{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.result-risk-moderate{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.result-risk-high{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.result-guidance-message{
+  background:#f8fafc;
+  border-left:4px solid #0f766e;
+  padding:14px 16px;
+  border-radius:10px;
+  margin-bottom:16px;
+}
+
+.result-guidance-message p{
+  margin:0;
+  line-height:1.7;
+  color:#334155;
+}
+
+.result-guidance-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.result-guidance-action{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#f0fdfa;
+}
+
+.result-guidance-action span{
+  color:#16a34a;
+  font-weight:700;
+}

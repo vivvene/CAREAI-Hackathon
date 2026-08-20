@@ -88,7 +88,15 @@ function Report() {
 
   const redFlags =
     result.redFlags || [];
+  const formatSymptom = (symptom) => {
+  if (!symptom) return "";
 
+  return symptom
+    .replaceAll("_", " ")
+    .replace(/\b\w/g, (letter) =>
+      letter.toUpperCase()
+    );
+};
 
   // =========================
   // RISK CLASS
@@ -337,8 +345,8 @@ function Report() {
                     key={index}
                   >
                     <span>✓</span>
-                    {symptom}
-                  </div>
+                    {formatSymptom(symptom)}
+                    </div>
 
                 ))}
 

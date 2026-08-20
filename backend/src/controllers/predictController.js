@@ -4,8 +4,7 @@ const { getGuidance } = require("../services/guidanceService");
 
 const predictPatient = async (req, res) => {
     try {
-const { name, age, gender, symptoms } = req.body;
-        // -----------------------------
+const { name, age, gender, duration, symptoms } = req.body;        // -----------------------------
         // VALIDATION
         // -----------------------------
         if (!name || typeof name !== "string" || !name.trim()) {
@@ -34,6 +33,19 @@ const { name, age, gender, symptoms } = req.body;
                 message: "Gender is required"
             });
         }
+        if (duration === undefined || duration === null) {
+        return res.status(400).json({
+        success: false,
+        message: "Duration is required"
+    });
+}
+
+        if (typeof duration !== "number" || duration < 1 || duration > 365) {
+        return res.status(400).json({
+        success: false,
+        message: "Duration must be a valid number between 1 and 365 days"
+    });
+}
 
         if (!Array.isArray(symptoms) || symptoms.length === 0) {
             return res.status(400).json({
@@ -70,11 +82,13 @@ const { name, age, gender, symptoms } = req.body;
             const patient = await Patient.create({
             name: name.trim(),
 
-            age,
+           age,
 
-            gender: gender.trim(),
+           gender: gender.trim(),
 
-            symptoms,
+           duration,
+
+           symptoms,
 
             prediction: prediction?.condition || "Unknown",
 
@@ -116,11 +130,12 @@ const { name, age, gender, symptoms } = req.body;
 
             patientId: patient._id,
             patient: {
-                id: patient._id,
-                name: patient.name,
-                age: patient.age,
-                gender: patient.gender
-            },
+            id: patient._id,
+            name: patient.name,
+            age: patient.age,
+            gender: patient.gender,
+            duration: patient.duration
+        },
 
             prediction:
                 mlResult.top_prediction || null,

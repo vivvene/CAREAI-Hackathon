@@ -195,52 +195,32 @@ function Results() {
             MAIN RESULT
         ================================================= */}
 
-        <section className="result-card result-main-card">
+        {/* =================================================
+    MAIN RESULT
+================================================= */}
 
-          <div className="result-main-content">
+<section className="result-card result-main-card">
+  <div className="result-main-content">
+    <div className="result-label">
+      POSSIBLE CONDITION
+    </div>
 
-            <div className="result-label">
-              POSSIBLE CONDITION
-            </div>
+    <h2>{prediction}</h2>
 
-            <h2>
-              {prediction}
-            </h2>
+    {probability !== undefined && (
+      <div className="result-confidence">
+        <span>Model probability</span>
+        <strong>{(Number(probability) * 100).toFixed(1)}%</strong>
+      </div>
+    )}
+  </div>
 
-            {probability !== undefined && (
-              <div className="result-confidence">
-
-                <span>
-                  Model probability
-                </span>
-
-                <strong>
-                  {(Number(probability) * 100).toFixed(1)}%
-                </strong>
-
-              </div>
-            )}
-
-          </div>
-
-
-          <div
-            className={`result-risk ${getRiskClass(risk)}`}
-          >
-            <span>
-              ASSESSMENT
-            </span>
-
-            <strong>
-              {String(risk).toUpperCase()}
-            </strong>
-
-            <small>
-              RISK
-            </small>
-          </div>
-
-        </section>
+  <div className={`result-risk ${getRiskClass(risk)}`}>
+    <span>ASSESSMENT</span>
+    <strong>{String(risk).toUpperCase()}</strong>
+    <small>RISK</small>
+  </div>
+</section>
 
 
         {/* =================================================
